@@ -1,9 +1,7 @@
 import {
   Badge,
   Box,
-  Button,
   Heading,
-  scaleFadeConfig,
   SimpleGrid,
   Text,
   useToast,
@@ -16,7 +14,7 @@ import { FaToggleOff, FaToggleOn, FaTrash } from "react-icons/fa";
 import { deleteTodo, toggleTodoStatus } from "../api/todo";
 const TodoList = () => {
   const [todos, setTodos] = React.useState([]);
-  const [isLoading, setIsLoading] = React.useState(true);
+
   const { isLoggedIn, user } = useAuth();
   const toast = useToast();
   const refreshData = () => {
@@ -33,7 +31,6 @@ const TodoList = () => {
       });
       setTodos(ar);
     });
-    setIsLoading(false);
   };
 
   useEffect(() => {
