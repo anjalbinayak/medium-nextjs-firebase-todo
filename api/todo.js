@@ -19,12 +19,10 @@ const addTodo = async ({ userId, title, description, status }) => {
   } catch (err) {}
 };
 
-const updateTodo = async ({ docId, title, description, status }) => {
+const toggleTodoStatus = async ({ docId, status }) => {
   try {
     const todoRef = doc(db, "todo", docId);
     await updateDoc(todoRef, {
-      title,
-      description,
       status,
     });
   } catch (err) {
@@ -41,4 +39,4 @@ const deleteTodo = async (docId) => {
   }
 };
 
-export { addTodo, updateTodo, deleteTodo };
+export { addTodo, toggleTodoStatus, deleteTodo };
