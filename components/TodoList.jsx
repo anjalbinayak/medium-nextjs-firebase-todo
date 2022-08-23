@@ -15,7 +15,7 @@ import { deleteTodo, toggleTodoStatus } from "../api/todo";
 const TodoList = () => {
   const [todos, setTodos] = React.useState([]);
 
-  const { isLoggedIn, user } = useAuth();
+  const {  user } = useAuth();
   const toast = useToast();
   const refreshData = () => {
     if (!user) {
