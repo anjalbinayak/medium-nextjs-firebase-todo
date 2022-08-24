@@ -15,7 +15,7 @@ import { deleteTodo, toggleTodoStatus } from "../api/todo";
 const TodoList = () => {
   const [todos, setTodos] = React.useState([]);
 
-  const {  user } = useAuth();
+  const { user } = useAuth();
   const toast = useToast();
   const refreshData = () => {
     if (!user) {
@@ -59,6 +59,7 @@ const TodoList = () => {
         {todos &&
           todos.map((todo) => (
             <Box
+              key={todo.id}
               p={3}
               boxShadow="2xl"
               shadow={"dark-lg"}
